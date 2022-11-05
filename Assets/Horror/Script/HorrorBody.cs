@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class HorrorBody : MonoBehaviour
 {
+    bool HorrorEvent = false;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0.01f, -0.0036f);
-        Destroy(gameObject, 7f);
+        if (HorrorEvent == true)
+        {
+            transform.Translate(0, 0.01f, -0.0036f);
+            Destroy(gameObject, 9f);
+        }             
     }   
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            HorrorEvent = true;
+        }
+    }
 }
