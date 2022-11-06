@@ -49,6 +49,7 @@ public class HorrorDoll : MonoBehaviour
         Destroy(GameObject.Find("HorrorDoll3(Clone)"));
         Instantiate(Ghost);
         Destroy(GameObject.Find("HorrorImageEvent(Clone)"), 0.5f);
+        GameObject.Find("player").GetComponent<PlayerMove>().Pmove = true;
     }
 
     void OnTriggerEnter(Collider other)
@@ -56,6 +57,9 @@ public class HorrorDoll : MonoBehaviour
         if (other.gameObject.tag == "Player" && HorrorEventOn == true)
         {
             HorrorEvent();
+            GameObject.Find("player").GetComponent<PlayerMove>().Pmove = false;
+            GameObject.Find("player").GetComponent<PlayerMove>().speed = 0f;
+
         }
     }
 }
