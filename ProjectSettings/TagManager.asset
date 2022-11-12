@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Door
   - Key
+  - KeyDoor
+  - DoorClose
+  - Audio
+  - HorrorSoundDoor
+  - LightBtn
+  - Enemy
+  - HarfDoor
+  - End
   layers:
   - Default
   - TransparentFX

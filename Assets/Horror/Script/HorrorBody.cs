@@ -17,6 +17,7 @@ public class HorrorBody : MonoBehaviour
         {
             transform.Translate(0, 0.01f, -0.0036f);
             Destroy(gameObject, 9f);
+            gameObject.GetComponent<AudioSource>().Play();
         }             
     }   
     void OnTriggerEnter(Collider other)
@@ -25,5 +26,6 @@ public class HorrorBody : MonoBehaviour
         {
             HorrorEvent = true;
         }
+       
     }
 }

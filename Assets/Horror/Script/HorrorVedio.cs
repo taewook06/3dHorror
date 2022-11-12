@@ -6,6 +6,7 @@ public class HorrorVedio : MonoBehaviour
 {
     bool VedioOn = true;
     public GameObject Vedio;
+    public GameObject EvilDoll;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +19,20 @@ public class HorrorVedio : MonoBehaviour
     {
         
     }
+    void EvilSpawn()
+    {
+        Instantiate(EvilDoll);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player" && VedioOn == true)
         {
             VedioOn = false;
-            Instantiate(Vedio);
+            Instantiate(Vedio);            
             Destroy(GameObject.Find("HorrorVideo(Clone)"), 10f);
+            Invoke("EvilSpawn", 10.5f);
+            
         }
     }
 }
