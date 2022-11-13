@@ -29,24 +29,51 @@ public class DoorNum : MonoBehaviour
         switch (R)
         {
             case 1:
-                DoorNumber.text = "1 3 5 7";
-                if(light1.activeSelf == true && light3.activeSelf == true && light5.activeSelf == true && light7.activeSelf == true)
+                DoorNumber.text = "3 7 1 5";
+                if(light3.activeSelf == true)
                 {
-                    DoorOn = true;
+                    if(light7.activeSelf == true)
+                    {
+                        if(light1.activeSelf == true)
+                        {
+                            if(light5.activeSelf == true)
+                            {
+                                DoorOn = true;
+                            }
+                        }
+                    }                   
                 }
                 break;
             case 2:
-                DoorNumber.text = "2 4 6 7";
-                if (light2.activeSelf == true && light4.activeSelf == true && light6.activeSelf == true && light7.activeSelf == true)
+                DoorNumber.text = "4 2 6 7";
+                if (light4.activeSelf == true)
                 {
-                    DoorOn = true;
+                    if(light2.activeSelf == true)
+                    {
+                        if(light6.activeSelf == true)
+                        {
+                            if(light7.activeSelf == true)
+                            {
+                                DoorOn = true;
+                            }
+                        }
+                    }                    
                 }
                 break;
             case 3:
-                DoorNumber.text = "1 4 5 6";
-               if (light1.activeSelf == true && light4.activeSelf == true && light5.activeSelf == true && light6.activeSelf == true)
+                DoorNumber.text = "6 1 5 4";
+               if (light6.activeSelf == true)
                {
-                    DoorOn = true;
+                    if(light1.activeSelf)
+                    {
+                        if(light5.activeSelf)
+                        {
+                            if(light4.activeSelf)
+                            {
+                                DoorOn = true;
+                            }
+                        }
+                    }                  
                }
                 break;
         }

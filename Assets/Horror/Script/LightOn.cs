@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class LightOn : MonoBehaviour
@@ -8,6 +9,7 @@ public class LightOn : MonoBehaviour
 
     public IEnumerator playerCheckCoroutine;
 
+    public TextMeshProUGUI E;
     public void Start()
     {
         playerCheckCoroutine = PlayerIn();
@@ -17,12 +19,14 @@ public class LightOn : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
+            E.text = "(E) Light";
             StartCoroutine(playerCheckCoroutine);
         }
     }
 
     public void OnTriggerExit(Collider other)
     {
+        E.text = " ";
         if (other.transform.tag == "Player")
         {
             StopCoroutine(playerCheckCoroutine);

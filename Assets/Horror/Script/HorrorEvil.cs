@@ -17,7 +17,7 @@ public class HorrorEvil : MonoBehaviour
     {
         if (HorrorEvent == true)
         {
-            transform.Translate(0f, 0f, 0.04f);
+            transform.Translate(0f, 0f, 0.02f);
             Destroy(gameObject, 7f);            
         }
     }
