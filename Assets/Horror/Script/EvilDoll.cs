@@ -9,7 +9,7 @@ public class EvilDoll : MonoBehaviour
 
     [SerializeField]
     Transform target;
-
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,8 +23,7 @@ public class EvilDoll : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {        
        target = GameObject.Find("player").transform;
        agant.SetDestination(target.position);       
     }
@@ -33,4 +32,18 @@ public class EvilDoll : MonoBehaviour
     {
         gameObject.GetComponent<NavMeshAgent>().speed = 5f;
     }
+    void OnTriggerStay(Collider other)
+    {
+        if(other.transform.tag == "Player")//¶Ù¾î´Ù´Ô
+        {
+            gameObject.transform.GetComponent<Animator>().SetBool("Run", true);
+        }
+        
+        
+    }
+    void OnTriggerExit(Collider other)
+    {
+        gameObject.transform.GetComponent<Animator>().SetBool("Run", false); //±â¾î´Ù´Ô
+    }
+
 }
