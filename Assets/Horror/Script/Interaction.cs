@@ -13,7 +13,8 @@ public class Interaction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        Debug.Log(GameObject.Find("DoorNum"));
+        Debug.Log(GameObject.Find("DoorNum").GetComponent<DoorNum>());
     }
 
     // Update is called once per frame
@@ -32,7 +33,8 @@ public class Interaction : MonoBehaviour
     {
         
         if (other.transform.tag == "Door" && Input.GetKeyDown(KeyCode.E))
-        {                      
+        {
+
             other.transform.parent .GetComponent<Animator>().SetTrigger("Use");
             //other = null;
         }
@@ -66,6 +68,7 @@ public class Interaction : MonoBehaviour
             Invoke("DoorSound", 2f);            
             DoorHorrorSound = false;
         }
+
         if (other.transform.tag == "HarfDoor" && Input.GetKeyDown(KeyCode.E) && GameObject.Find("DoorNum").GetComponent<DoorNum>().DoorOn == true)
         {
             other.transform.parent.GetComponent<Animator>().SetTrigger("Use");
