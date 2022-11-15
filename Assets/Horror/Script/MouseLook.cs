@@ -27,8 +27,8 @@ public class MouseLook : MonoBehaviour
     {
         _camera = GetComponent<Camera>();
 
-        Cursor.lockState = CursorLockMode.Locked; //마우스 커서를 잠금.
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked; //마우스 커서를 잠금.
+        //Cursor.visible = false;
 
         Rigidbody body = GetComponent<Rigidbody>();
         if (body != null)

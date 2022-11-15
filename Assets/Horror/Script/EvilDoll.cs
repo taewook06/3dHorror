@@ -36,13 +36,13 @@ public class EvilDoll : MonoBehaviour
     {
         if(other.transform.tag == "Player")//¶Ù¾î´Ù´Ô
         {
+            //gameObject.GetComponent<NavMeshAgent>().speed = 3f;
             gameObject.transform.GetComponent<Animator>().SetBool("Run", true);
-        }
-        
-        
-    }
+        }                
+    }    
     void OnTriggerExit(Collider other)
     {
+        //gameObject.GetComponent<NavMeshAgent>().speed = 5f;
         gameObject.transform.GetComponent<Animator>().SetBool("Run", false); //±â¾î´Ù´Ô
     }
 

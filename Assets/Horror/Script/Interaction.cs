@@ -13,6 +13,9 @@ public class Interaction : MonoBehaviour
     bool cry = true;
     bool DoorHorrorSound = true;
 
+    public GameObject Gun;
+    public GameObject GunSpawner;
+
     void Start()
     {
         coroutine = Interact();
@@ -40,6 +43,18 @@ public class Interaction : MonoBehaviour
                if (Input.GetKeyDown(KeyCode.E))
                {
                     ThisInteract.transform.parent.GetComponent<Animator>().SetTrigger("Use");
+                    break;
+               }
+            }
+            else if (ThisInteract.tag == "Gun")
+            {                
+                E.text = "(E) Gun";
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Destroy(ThisInteract);
+                    GameObject Guns = Instantiate(Gun, GunSpawner.transform.position, GunSpawner.transform.rotation);
+                    Guns.transform.parent = gameObject.transform.parent;
+                    E.text = "";
                     break;
                 }
             }
