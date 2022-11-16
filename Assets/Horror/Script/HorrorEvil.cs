@@ -17,6 +17,7 @@ public class HorrorEvil : MonoBehaviour
     {
         if (HorrorEvent == true)
         {
+            gameObject.GetComponent<Animator>().SetTrigger("Walk");
             transform.Translate(0f, 0f, 0.02f);
             Destroy(gameObject, 7f);            
         }

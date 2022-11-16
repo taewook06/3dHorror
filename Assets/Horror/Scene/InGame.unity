@@ -16116,7 +16116,7 @@ GameObject:
   - component: {fileID: 784916985}
   m_Layer: 0
   m_Name: PlayerBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16129,7 +16129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784916981}
   m_LocalRotation: {x: -0, y: -0.44650626, z: -0, w: 0.8947805}
-  m_LocalPosition: {x: 73.48, y: 1.49, z: -35.52}
+  m_LocalPosition: {x: 9.93, y: 1.49, z: 5.91}
   m_LocalScale: {x: 0.70000005, y: 1, z: 0.70000005}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16824,7 +16824,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 94778438ad080004aadc03fd5045400b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -65544,8 +65544,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4083349900228530501}
-  m_LocalRotation: {x: 0.00011387496, y: 0.7955663, z: 0.002812157, w: -0.6058601}
-  m_LocalPosition: {x: 14.68, y: 1.12, z: 14.75}
+  m_LocalRotation: {x: -0.0011404055, y: 0.70635116, z: -0.0011428408, w: 0.70785975}
+  m_LocalPosition: {x: 9.95, y: 0.11, z: 14.534713}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65553,7 +65553,7 @@ Transform:
   - {fileID: 718645155526951019}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -0.264, y: 254.582, z: -0.185}
+  m_LocalEulerAnglesHint: {x: 0, y: 89.878, z: -0.185}
 --- !u!137 &3837937362101180244
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -65976,8 +65976,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3738315023363066879}
   - component: {fileID: 7278104389518233989}
-  - component: {fileID: 7278104389518233990}
   - component: {fileID: 7278104389518233991}
+  - component: {fileID: 7278104389518233992}
   m_Layer: 0
   m_Name: HorrorEvil
   m_TagString: Enemy
@@ -68238,19 +68238,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &7278104389518233990
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4083349900228530501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.080527514, y: 1.0057449, z: 2.0913603}
-  m_Center: {x: -0.5945651, y: -0.0028727057, z: 0.5456817}
 --- !u!114 &7278104389518233991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68263,6 +68250,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055c748187dacc04ebd03d28cd24862b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7278104389518233992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4083349900228530501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0682057, y: 0.29763854, z: 0.80130774}
+  m_Center: {x: 1.2206085, y: 0.3511805, z: 0.41986522}
 --- !u!137 &7287141057600933238
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
