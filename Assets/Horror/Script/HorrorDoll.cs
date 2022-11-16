@@ -6,6 +6,7 @@ public class HorrorDoll : MonoBehaviour
 {
     public GameObject Doll;   
     bool HorrorEventOn = true;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +21,15 @@ public class HorrorDoll : MonoBehaviour
     }
     void Speed()
     {
-        GameObject.Find("player").GetComponent<PlayerMove>().Pmove = true;
+        player.GetComponent<PlayerMove>().Pmove = true;
     }
     
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && HorrorEventOn == true)
-        {          
-            GameObject.Find("player").GetComponent<PlayerMove>().Pmove = false;
-            GameObject.Find("player").GetComponent<PlayerMove>().speed = 0f;
+        {
+            player.GetComponent<PlayerMove>().Pmove = false;
+            player.GetComponent<PlayerMove>().speed = 0f;
             Instantiate(Doll);
             Destroy(GameObject.Find("HorrorDoll(Clone)"), 6f);
             Invoke("Speed", 6f);

@@ -9,9 +9,9 @@ public class Interaction : MonoBehaviour
     GameObject ThisInteract;
     TextMeshProUGUI E;
 
-    bool keyOn = false;
-    bool cry = true;
-    bool DoorHorrorSound = true;
+    public bool keyOn = false;
+    bool cry = true;  
+    bool gunOn = false;
 
     public GameObject Gun;
     public GameObject GunSpawner;
@@ -20,7 +20,14 @@ public class Interaction : MonoBehaviour
     {
         coroutine = Interact();
         E = GameObject.Find("Canvas").transform.GetComponentInChildren<TextMeshProUGUI>();
-    }    
+    }
+    void Update()
+    {
+        if(gunOn == true && Time.timeScale != 0 && Input.GetMouseButtonDown(0))
+        {
+            GameObject.Find("GameManager").GetComponent<AudioSource>().Play();
+        }
+    }
     IEnumerator Interact()
     {
         while(true)
@@ -51,6 +58,7 @@ public class Interaction : MonoBehaviour
                 E.text = "(E) Gun";
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    gunOn = true;
                     Destroy(ThisInteract);
                     GameObject Guns = Instantiate(Gun, GunSpawner.transform.position, GunSpawner.transform.rotation);
                     Guns.transform.parent = gameObject.transform.parent;
@@ -103,20 +111,12 @@ public class Interaction : MonoBehaviour
                 }
               
             }         
-            else if(ThisInteract.tag == "HorrorDoorSound" )
+            else if(ThisInteract.tag == "HorrorSoundDoor")
             {                
                 ThisInteract.gameObject.GetComponent<AudioSource>().Play();
-                Invoke("DoorSound", 2f);
-                DoorHorrorSound = false;
+                Invoke("DoorSound", 2f);             
             
-            }
-            else if (ThisInteract.tag == "DoorClose")
-            {
-                GameObject.Find("KeyDoor").transform.GetComponent<Animator>().SetTrigger("Use");
-                GameObject.Find("DoorClose").GetComponent<AudioSource>().Play();
-                keyOn = false;
-               
-            }
+            }           
             else if(ThisInteract.tag == "LightBtn")
             {
                 E.text = "(E) Light";
@@ -132,6 +132,7 @@ public class Interaction : MonoBehaviour
     void DoorSound()
     {
         GameObject.Find("HorrorSoundDoor").GetComponent<AudioSource>().Play();
+        GameObject.Find("HorrorSoundDoor").layer = 0;
     }
     void OnTriggerEnter(Collider other)
     {       

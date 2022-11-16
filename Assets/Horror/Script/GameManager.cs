@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<Animator>().SetTrigger("Use");
             Invoke("die", 3f);
-        }
+        }       
     }
     void die()
     {          

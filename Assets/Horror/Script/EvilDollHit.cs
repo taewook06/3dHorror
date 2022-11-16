@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EvilDollHit : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class EvilDollHit : MonoBehaviour
     {
         gameObject.transform.parent.gameObject.SetActive(false);
     }
+    void Ending()
+    {
+        SceneManager.LoadScene("End");
+    }
    
     void OnTriggerEnter(Collider other)
     {
@@ -34,6 +39,7 @@ public class EvilDollHit : MonoBehaviour
             gameObject.transform.parent.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
             gameObject.transform.parent.GetComponent<Animator>().SetBool("Die", true); //Á×À½           
             Invoke("Die", 4f);
+            Invoke("Ending", 9f);
         }
         if (other.transform.tag == "Player")
         {
