@@ -2621,7 +2621,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386429016476642642}
-  - component: {fileID: 7844812750543699575}
   m_Layer: 0
   m_Name: Geometry
   m_TagString: Untagged
@@ -2647,19 +2646,6 @@ Transform:
   m_Father: {fileID: 6668490395979175253}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7844812750543699575
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4186191366338410329}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4186482414348893058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,7 +3314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5293126313461468127}
   m_LocalRotation: {x: 0.0027699391, y: 0.83866566, z: 0.00047737616, w: 0.5446394}
-  m_LocalPosition: {x: 35.486, y: 0.303, z: -14.236}
+  m_LocalPosition: {x: 35.49, y: 1.14, z: -14.23}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5585,6 +5571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05392bda45d824045a97e150dd754d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diying: 0
 --- !u!1 &8909194859344594988
 GameObject:
   m_ObjectHideFlags: 0

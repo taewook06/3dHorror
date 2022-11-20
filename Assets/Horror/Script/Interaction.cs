@@ -105,7 +105,7 @@ public class Interaction : MonoBehaviour
                 E.text = "(E) Audio";
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    ThisInteract.transform.gameObject.GetComponent<AudioSource>().Play();
+                    ThisInteract.GetComponent<AudioSource>().Play();
                     cry = false;
                     break;
                 }

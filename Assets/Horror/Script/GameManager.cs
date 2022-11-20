@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,8 +36,9 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<Animator>().SetTrigger("Use");
             Invoke("die", 3f);
-        }       
+        }         
     }
+   
     void die()
     {          
         Time.timeScale = 0f;

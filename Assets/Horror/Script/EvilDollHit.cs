@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EvilDollHit : MonoBehaviour
 {
-    bool diying = false;
+    public bool diying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,8 @@ public class EvilDollHit : MonoBehaviour
     {
         SceneManager.LoadScene("End");
     }
-   
+
+
     void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Bullet")
@@ -40,6 +41,7 @@ public class EvilDollHit : MonoBehaviour
             gameObject.transform.parent.GetComponent<Animator>().SetBool("Die", true); //Á×À½           
             Invoke("Die", 4f);
             Invoke("Ending", 9f);
+
         }
         if (other.transform.tag == "Player")
         {

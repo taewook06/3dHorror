@@ -18,7 +18,7 @@ public class EvilDoll : MonoBehaviour
      void Start()
      {
         gameObject.GetComponent<NavMeshAgent>().speed = 0f;
-        Invoke("speed", 2f);
+        Invoke("speed", 4f);
      }
 
     // Update is called once per frame
